@@ -1,11 +1,11 @@
 package challenges;
 
-public class CarpetCostCalculator {
+public class Floor {
 
     private double width;
     private double length;
 
-    public CarpetCostCalculator(double width, double length) {
+    public Floor(double width, double length) {
         if (width < 0) {
             this.width = 0;
         } else {
@@ -43,5 +43,15 @@ class Carpet {
 
 class Calculator {
 
-    
+    private Floor floor;
+    private Carpet carpet;
+
+    public Calculator(Floor floor, Carpet carpet) {
+        this.floor = floor;
+        this.carpet = carpet;
+    }
+
+    public double getTotalCost() {
+        return floor.getArea() * carpet.getCost();
+    }
 }
